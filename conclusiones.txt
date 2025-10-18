@@ -1,0 +1,21 @@
+CONCLUSIONES DEL EJERCICIO DE AUTOMATIZACIÓN
+
+1. Al automatizar el flujo de compra en SauceDemo, pude validar que el sistema responde correctamente ante distintas acciones del usuario, desde el inicio de sesión hasta la confirmación del pedido.
+
+2. Logré simular todo el recorrido de una compra real. Esto me permitió comprobar que los pasos más importantes del proceso (como agregar productos, llenar el formulario y finalizar la compra) funcionan como se espera.
+
+3. Organizar los pasos de forma modular me ayudó bastante. Al tener tareas reutilizables y bien separadas, mantuve el código ordenado, fácil de entender y listo para futuras actualizaciones.
+
+4. Validar el mensaje final fue clave para confirmar que todo el proceso se cerraba correctamente. Este paso es especialmente importante porque representa el cierre visible para el usuario.
+
+5. Ejecuté las pruebas directamente desde IntelliJ y contar con reportes automáticos me facilitó mucho el análisis. Fue sencillo identificar qué falló y en qué paso, lo que me permitió corregir rápidamente.
+
+RECOMENDACIONES:
+
+- Incluir pruebas no solo para los flujos exitosos, sino también para escenarios con errores, validaciones o cancelaciones.
+
+- Agregar validaciones más detalladas, como la verificación de precios, el resumen del pedido o el comportamiento después de finalizar la compra.
+
+- Usar datos de prueba que reflejen casos reales para obtener resultados más representativos.
+
+- Integrar estas pruebas en un entorno CI/CD para asegurar que el flujo de compra se mantenga estable ante cualquier cambio en el sistema.
