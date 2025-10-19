@@ -45,7 +45,8 @@ E2E-SauceDemo
 │               └── successful-purchase.feature  # Escenario de compra exitosa       
 ├── target/
 │   └── site/
-│       └── index.html                           # Reporte de la ejecución de las pruebas
+│       └── serenity/  
+│           └── index.html                           # Reporte de la ejecución de las pruebas
 ├── .gitignore
 ├── build.gradle
 ├── gradlew / gradlew.bat
