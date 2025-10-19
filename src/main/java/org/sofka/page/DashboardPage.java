@@ -15,7 +15,4 @@ public class DashboardPage {
 
     public static final Target CHECKOUT_BTN = Target.the("BOTÓN DE VALIDACIÓN DE COMPRAS")
             .locatedBy("#checkout");
-//ojo
-    public static final Target PRODUCT_TITLE = Target.the("TÍTULO DEL PRODUCTO EN EL CARRITO")
-            .locatedBy("[data-test='inventory-item-name']");
 }

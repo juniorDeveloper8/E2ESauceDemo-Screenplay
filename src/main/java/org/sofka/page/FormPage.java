@@ -4,10 +4,6 @@ import net.serenitybdd.screenplay.targets.Target;
 
 public class FormPage {
 
-    //ojo
-    public static final Target CHECKOUT_TITLE = Target.the("TÍTULO DEL FORMULARIO DE CHECKOUT")
-            .locatedBy("[data-test='title']");
-
     public static final Target FIRSTNAME = Target.the("PRIMER NOMBRE")
             .locatedBy("#first-name");
 
