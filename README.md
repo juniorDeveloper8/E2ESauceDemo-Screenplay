@@ -74,7 +74,10 @@ git clone https://github.com/juniorDeveloper8/E2ESauceDemo-Screenplay.git
 ```
 src/test/java/sofka/runner/SauceRunner.java
 ```
-- Haz clic derecho sobre la clase y selecciona "Run 'SauceRunner'" y ejecutar.
+- Haz clic derecho sobre la clase y selecciona "Run 'SauceRunner'" y ejecutar o ejecutar en la terminal del proyecto.
+```bash
+./gradlew clean test serenityAggregate
+```
 - Asegúrate de que el tag definido en el runner coincida con el del archivo .feature, por ejemplo: @E2ECompraExitosa.
 
 ## 📊 Visualización de reportes

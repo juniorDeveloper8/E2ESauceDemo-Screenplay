@@ -3,6 +3,10 @@ plugins {
     id "net.serenity-bdd.serenity-gradle-plugin" version "4.1.14"
 }
 
+serenity {
+    reports = ["single-page-html"]
+}
+
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 java {
