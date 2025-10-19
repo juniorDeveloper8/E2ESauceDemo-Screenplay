@@ -1,24 +1,61 @@
-# Ejercicio de Automatización E2E con Serenity BDD
+# 🛒 Ejercicio de Automatización E2E con Serenity BDD
 
-Este ejercicio realiza pruebas funcionales automatizadas (E2E) de un flujo de compra en la
-página [https://www.saucedemo.com/](https://www.saucedemo.com/) utilizando Serenity BDD con Screenplay en Java y Maven.
+Este proyecto automatiza el flujo completo de compra en la página [SauceDemo](https://www.saucedemo.com/) utilizando **Serenity BDD** con el patrón **Screenplay** en **Java** y **Gradle**. El objetivo es validar el comportamiento funcional del sistema desde el inicio de sesión hasta la confirmación del pedido.
 
-## Prerequisitos
+---
 
-Antes de ejecutar las pruebas, asegúrate de tener configurado lo siguiente en tu máquina local:
+## ⚙️ Requisitos previos
 
-|                                                                               **IntelliJ**                                                                                |                                                              **Java**                                                               |                                                         **Gradle**                                                         |
-|:-------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:-----------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------:|
-| [<img width="50" height="50" src="https://cdn.iconscout.com/icon/free/png-128/intellij-idea-569199.png">](https://www.jetbrains.com/es-es/idea/download/#section=windows) | [<img height="60" src="https://www.oracle.com/a/ocom/img/cb71-java-logo.png">](https://www.oracle.com/java/technologies/downloads/) | [<img height="50" src="https://gradle.org/images/gradle-knowledge-graph-logo.png?20170228">](https://gradle.org/releases/) |
+Antes de ejecutar las pruebas, asegúrate de tener lo siguiente configurado en tu entorno local:
 
-> **NOTA**:
+| [IntelliJ IDEA](https://www.jetbrains.com/es-es/idea/download/#section=windows) | [Java 21](https://www.oracle.com/java/technologies/downloads/) | [Gradle 8.13+](https://gradle.org/releases/) |
+|:--:|:--:|:--:|
+| ![IntelliJ](https://cdn.iconscout.com/icon/free/png-128/intellij-idea-569199.png) | ![Java](https://www.oracle.com/a/ocom/img/cb71-java-logo.png) | ![Gradle](https://gradle.org/images/gradle-knowledge-graph-logo.png?20170228) |
 
-- **Sistema Operativo:** Windows 11
-- **IDE:** IntelliJ IDEA versión Community 2025
-- **Gradel**
-- **JDK:** versión 21 (debe estar en la variable de entorno)
-- Una vez obtenido IntelliJ es necesario instalar los plugins de Gherkin y Cucumber for Java. (
-  *[Guia de instalación plugins en intellij](https://www.jetbrains.com/help/idea/managing-plugins.html)*)
+> **Notas adicionales:**
+> - Sistema operativo recomendado: **Windows 11**
+> - IDE recomendado: **IntelliJ IDEA Community 2025**
+> - Asegúrate de tener el **JDK 21** configurado en la variable de entorno `JAVA_HOME`.
+> - Instala los plugins **Gherkin** y **Cucumber for Java** en IntelliJ.  
+    >   [Guía de instalación de plugins](https://www.jetbrains.com/help/idea/managing-plugins.html)
+
+---
+
+## 📁 Estructura del proyecto
+
+```plaintext
+E2E-SauceDemo
+├── gradle/
+│   └── wrapper/
+│       ├── gradle-wrapper.jar
+│       └── gradle-wrapper.properties
+├── src/
+│   ├── main/java/sofka/
+│   │   ├── page/               
+│   │   ├── question/           
+│   │   ├── task/               
+│   │   └── Main                
+│   └── test/java/sofka/
+│       ├── glue/
+│       │   └── SuccessPurchaseStepDef.java  
+│       ├── runner/
+│       │   └── SauceRunner.java                 # Clase para ejecutar las pruebas
+│       └── resources/
+│           └── features/
+│               └── successful-purchase.feature  # Escenario de compra exitosa       
+├── target/
+│   └── site/
+│       └── index.html                           # Reporte de la ejecución de las pruebas
+├── .gitignore
+├── build.gradle
+├── gradlew / gradlew.bat
+├── serenity.properties
+├── settings.gradle
+├── readme.txt                                   # Instrucciones de instalación y ejecución
+├── README.md
+├── conclusiones.txt                             # Análisis técnico de los resultados obtenidos  
+
+```
 
 ## Comandos de instalación
 
@@ -28,36 +65,26 @@ Antes de ejecutar las pruebas, asegúrate de tener configurado lo siguiente en t
 git clone https://github.com/juniorDeveloper8/E2ESauceDemo-Screenplay.git
 ```
 
-### (SOLO SI ES NECESARIO)
+## Ejecutar las pruebas
 
-- Instala las dependencias del proyecto:
+- Abre el proyecto en IntelliJ IDEA.
+- Dirígete al archivo SauceRunner.java ubicado en:
 
-```markdown
-./gradlew build
 ```
-
-- Compilar el proyecto y limpiar:
-
-```markdown
-./gradlew clean assemble
+src/test/java/sofka/runner/SauceRunner.java
 ```
+- Haz clic derecho sobre la clase y selecciona "Run 'SauceRunner'" y ejecutar.
+- Asegúrate de que el tag definido en el runner coincida con el del archivo .feature, por ejemplo: @E2ECompraExitosa.
 
-## Instrucciones para Ejecutar las Pruebas
+## 📊 Visualización de reportes
 
-1. **Ejecuta las pruebas:**
-    - Para ejecutar las pruebas, dirigirse a la carpeta runner y ejecutar RunnerTest.java que se encuentra en
-    ```
-    \src\test\java\com\sofka\runners\SauceRunner.java
-    ```
+- Revisa la URL del reporte al final de la consola de IntelliJ.
+- También puedes abrir manualmente el reporte en:
+```
+# Al ejecutar el proyecto se genera un reporte en la siguiente ruta.
 
-    2. **Genera el reporte:**
-        - una vez ejecutada la prueba nos diriguimos al final de la terminal del intellij donde estara la url del
-          reporte
-
-        - Otra forma de ver los reportes es en la carpeta `target/site/serenity` detro estaral el reporte de nuestra
-          ejecución el archivo es `index.html` .
-
-        - Para visualizar el reporte del test que ejecute revisar dentro de la carpeta `evidence`.
+target/site/serenity/index.html
+```
 
 # Nota:
 
@@ -101,8 +128,8 @@ webdriver {
 ```
 
 1. **Configurar el entorno:**
-    - El archivo `serenity.conf` debe estar configurado correctamente. Asegúrate de que las siguientes configuraciones
-      estén presentes:
+    - El archivo `serenity.conf` debe estar configurado correctamente. Asegúrate de que la siguiente configuración
+      esté presente ante de realizar las pruebas:
       ```
          environments {
              default{
@@ -120,25 +147,24 @@ webdriver {
                     ]
                 }
             }
-        }         
-```
+        }
+               
+      ```
 
-## Detalles del Flujo de Compra Automatizado
+## 🛒 Flujo de compra automatizado
 
-El flujo de compra automatizado incluye los siguientes pasos:
+- **Inicio de sesión:**  
+  Se accede con el usuario `standard_user` y la contraseña `secret_sauce`.
 
-1. **Autenticarse en la plataforma:**
-   - Se inicia sesión con el usuario: `standard_user` y la contraseña: `secret_sauce`.
+- **Agregar productos al carrito:**  
+  Se seleccionan dos productos distintos.
 
-2. **Agregar dos productos al carrito:**
-   - Se seleccionan y añaden dos productos distintos al carrito de compras.
+- **Verificación del carrito:**  
+  Se valida que los productos añadidos estén correctamente listados.
 
-3. **Visualizar el carrito:**
-   - Se accede al carrito para verificar que los productos añadidos estén correctamente listados.
+- **Formulario de compra:**  
+  Se completan los campos requeridos con datos ficticios (nombre, apellido, código postal).
 
-4. **Completar el formulario de compra:**
-   - Se llenan los campos requeridos del formulario con datos ficticios (nombre, apellido y código postal).
-
-5. **Finalizar la compra:**
-   - Se finaliza el proceso de compra y se valida la aparición del mensaje de confirmación:  
-     **“THANK YOU FOR YOUR ORDER”**
+- **Finalización del pedido:**  
+  Se confirma la compra y se valida el mensaje final:  
+  **“THANK YOU FOR YOUR ORDER”**

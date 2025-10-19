@@ -1,21 +1,23 @@
-CONCLUSIONES DEL EJERCICIO DE AUTOMATIZACIÓN
+📄 Conclusiones del Ejercicio de Automatización – SauceDemo
+   Durante el desarrollo de este ejercicio, automatizé el flujo completo de compra en la plataforma SauceDemo utilizando el patrón Serenity Screenplay.
+   El objetivo fue validar el comportamiento del sistema ante distintas interacciones del usuario, desde el inicio de sesión hasta la confirmación final del pedido.
 
-1. Al automatizar el flujo de compra en SauceDemo, pude validar que el sistema responde correctamente ante distintas acciones del usuario, desde el inicio de sesión hasta la confirmación del pedido.
+🧪 Principales hallazgos
+1. Pude simular de forma exitosa el recorrido completo de una compra real, incluyendo la selección de productos, llenado del formulario de envío y finalización del pedido.
 
-2. Logré simular todo el recorrido de una compra real. Esto me permitió comprobar que los pasos más importantes del proceso (como agregar productos, llenar el formulario y finalizar la compra) funcionan como se espera.
+2. Validé que cada paso del proceso responde correctamente, tanto en términos funcionales como visuales, asegurando que el usuario reciba retroalimentación clara en cada etapa.
 
-3. Organizar los pasos de forma modular me ayudó bastante. Al tener tareas reutilizables y bien separadas, mantuve el código ordenado, fácil de entender y listo para futuras actualizaciones.
+3. La organización modular del código, basada en tareas reutilizables, me permitió mantener una estructura limpia, escalable y fácil de mantener.
 
-4. Validar el mensaje final fue clave para confirmar que todo el proceso se cerraba correctamente. Este paso es especialmente importante porque representa el cierre visible para el usuario.
+4. La validación del mensaje final de confirmación fue clave para asegurar que el flujo se cerraba correctamente desde la perspectiva del usuario.
 
-5. Ejecuté las pruebas directamente desde IntelliJ y contar con reportes automáticos me facilitó mucho el análisis. Fue sencillo identificar qué falló y en qué paso, lo que me permitió corregir rápidamente.
+5. Ejecuté las pruebas directamente desde IntelliJ IDEA, y los reportes generados automáticamente en formato HTML facilitaron el análisis de resultados y la detección de posibles fallos.
 
-RECOMENDACIONES:
+⚙️ Recomendaciones
+- Incluir pruebas para flujos alternativos, como errores en el formulario, cancelaciones o validaciones de campos obligatorios.
 
-- Incluir pruebas no solo para los flujos exitosos, sino también para escenarios con errores, validaciones o cancelaciones.
+- Agregar verificaciones más detalladas, como el resumen del pedido, precios unitarios y totales, o el comportamiento post-compra.
 
-- Agregar validaciones más detalladas, como la verificación de precios, el resumen del pedido o el comportamiento después de finalizar la compra.
+- Utilizar datos de prueba más representativos para simular escenarios reales y mejorar la cobertura.
 
-- Usar datos de prueba que reflejen casos reales para obtener resultados más representativos.
-
-- Integrar estas pruebas en un entorno CI/CD para asegurar que el flujo de compra se mantenga estable ante cualquier cambio en el sistema.
+- Integrar las pruebas en un pipeline de CI/CD para asegurar que el flujo de compra se mantenga estable ante cambios en el sistema.
